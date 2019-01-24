@@ -8,6 +8,7 @@ namespace WebApi.GraphQL
         public StoreSchema(IDependencyResolver resolver) : base(resolver)
         {
             Query = resolver.Resolve<StoreQuery>();
+            Mutation = resolver.Resolve<StoreMutation>();
         }
     }
 }

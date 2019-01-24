@@ -9,7 +9,6 @@ namespace WebApi.GraphQL.Types
         {
             Name = "CustomerTypeEnum";
             Description = "The type of customer";
-            
         }
     }
 }
