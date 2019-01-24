@@ -19,6 +19,12 @@ namespace WebApi.GraphQL
                 resolve: ctx => dbContext.Products.ToList()
             );
 
+            Field<ProductType>(
+                "product",
+                arguments: new QueryArguments(new QueryArgument<NonNullGraphType<IdGraphType>> { Name = "id" }),
+                resolve: ctx => dbContext.Products.Find(ctx.GetArgument<int>("id"))
+            );
+
             Field<ListGraphType<ManufacturerType>>(
                 "manufacturers",
                 resolve: ctx => dbContext.Manufacturers.ToList()
